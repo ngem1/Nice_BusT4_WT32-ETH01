@@ -770,7 +770,7 @@ select:
             args: [ "(id(speed_open_select).index_of(x.c_str())).value_or(0)" ]
 
         - lambda: |-
-            if (x <> other) {
+            if (x != other) {
               int open_speed_variable;
               switch ((id(speed_open_select).index_of(x.c_str())).value_or(0)) {
                 case 0:
@@ -978,10 +978,10 @@ select:
                 case 5:
                   goi_mode_variable = 18;
                   break;
-                case 5:
+                case 6:
                   goi_mode_variable = 4;
                   break;
-                case 5:
+                case 7:
                   goi_mode_variable = 7;
                   break;
               }
