@@ -2,8 +2,8 @@
 #test on Wemos D1 mini
 
 substitutions:
-  device_name: "nice-robus-400-bust4-uart"
-  device_name_friendly: "Nice Robus 400"
+  device_name: "gates"
+  device_name_friendly: "Gates"
   api_password: !secret     wt32_eth01_api_password
   ota_password: !secret     wt32_eth01_ota_password
   mqtt_broker_address: !secret   mqtt_broker_address
@@ -16,20 +16,18 @@ substitutions:
   # name: ${device_name}
   # friendly_name: ${device_name_friendly}
 
-
 esp32:
-  board: wt32-eth01
-  # board: esp32dev
+  board: esp32-c3-devkitm-1
   framework:
     type: arduino
 
-ethernet:
-  type: LAN8720
-  mdc_pin: GPIO23
-  mdio_pin: GPIO18
-  clk_mode: GPIO0_IN
-  phy_addr: 1
-  power_pin: GPIO16
+# ethernet:
+  # type: LAN8720
+  # mdc_pin: GPIO23
+  # mdio_pin: GPIO18
+  # clk_mode: GPIO0_IN
+  # phy_addr: 1
+  # power_pin: GPIO16
   #Optional manual IP
   #manual_ip:
   #  static_ip: $device_ip
@@ -63,12 +61,12 @@ web_server:
 external_components:
   - source:
       type: git
-      url: https://github.com/karol27/Nice_BusT4_WT32-ETH01
+      url: https://github.com/ngem1/Nice_BusT4_WT32-ETH01
     refresh: 0s
 
-#wifi:
-#  ssid: !secret wifi_ssid
-#  password: !secret wifi_password
+wifi:
+ ssid: !secret wifi_ssid
+ password: !secret wifi_password
 
 #  # Enable fallback hotspot (captive portal) in case wifi connection fails
 #  ap:
